@@ -15,7 +15,7 @@ public class HUU
     [Display(Name = "TÊN HỒ SƠ")]
     [MaxLength(10)]
     public string? HUUName { get; set; }
-    
+
     
     [Required(ErrorMessage = "Số điện thoại không được để trống !!!")]
     [Display(Name = "SỐ ĐIỆN THOẠI")]
@@ -23,9 +23,14 @@ public class HUU
     public string? HUUSđt { get; set; }
 
     [Required(ErrorMessage = "Số lượng không được để trống !!!")]
-    [Display(Name = "HUU")]
+    [Display(Name = "HUU01")]
     [MaxLength(10)]
     public string? HUUSL { get; set; }
+
+    [Required(ErrorMessage = "Số lượng 02 không được để trống !!!")]
+    [Display(Name = "HUU02")]
+    [MaxLength(10)]
+    public string? HUUSL02 { get; set; }
     
     
 }

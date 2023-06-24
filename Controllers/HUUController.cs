@@ -56,7 +56,7 @@ namespace CUONGDB.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         
-        public async Task<IActionResult> Create([Bind("HUUID,HUUName,HUUSđt,HUUSL")] HUU hUU)
+        public async Task<IActionResult> Create([Bind("HUUID,HUUName,HUUSđt,HUUSL,HUUSL02")] HUU hUU)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace CUONGDB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("HUUID,HUUName,HUUSđt,HUUSL")] HUU hUU)
+        public async Task<IActionResult> Edit(string id, [Bind("HUUID,HUUName,HUUSđt,HUUSL,HUUSL02")] HUU hUU)
         {
             if (id != hUU.HUUID)
             {
