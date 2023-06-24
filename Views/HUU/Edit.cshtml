@@ -1,0 +1,49 @@
+@model CUONGDB.Models.HUU
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>HUU</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HUUID" />
+             <div class="form-group">
+                <label asp-for="HUUID" class="control-label"></label>
+                <input asp-for="HUUID" class="form-control" />
+                <span asp-validation-for="HUUID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HUUName" class="control-label"></label>
+                <input asp-for="HUUName" class="form-control" />
+                <span asp-validation-for="HUUName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HUUSđt" class="control-label"></label>
+                <input asp-for="HUUSđt" class="form-control" />
+                <span asp-validation-for="HUUSđt" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="HUUSL" class="control-label"></label>
+                <input asp-for="HUUSL" class="form-control" />
+                <span asp-validation-for="HUUSL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
