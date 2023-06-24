@@ -55,6 +55,7 @@ namespace CUONGDB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Create([Bind("HUUID,HUUName,HUUSđt,HUUSL")] HUU hUU)
         {
             if (ModelState.IsValid)
