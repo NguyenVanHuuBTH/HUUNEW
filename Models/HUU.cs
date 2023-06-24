@@ -10,10 +10,12 @@ public class HUU
     [MaxLength(10)]
     public string? HUUID { get; set; }
 
+
     [Required(ErrorMessage = "Tên sản phẩm không được để trống !!!")]
     [Display(Name = "TÊN HỒ SƠ")]
     [MaxLength(10)]
     public string? HUUName { get; set; }
+    
     
     [Required(ErrorMessage = "Số điện thoại không được để trống !!!")]
     [Display(Name = "SỐ ĐIỆN THOẠI")]
