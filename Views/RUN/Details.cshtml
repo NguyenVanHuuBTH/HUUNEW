@@ -1,0 +1,42 @@
+@model CUONGDB.Models.RUN
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>CHI TIẾT</h1>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="row">
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RUNID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RUNID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RUNNAME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RUNNAME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RUNADDRESS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RUNADDRESS)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RUNSEX)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RUNSEX)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.RUNID">Chỉnh Sửa</a> |
+    <a asp-action="Index">Quay Lại</a>
+</div>

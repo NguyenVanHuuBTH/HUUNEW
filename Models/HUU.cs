@@ -8,6 +8,7 @@ public class HUU
     [Required(ErrorMessage = "Mã hồ sơ không được để trống !!!")]
     [Display(Name = "MÃ HỒ SƠ")]
     [MaxLength(10)]
+    [MinLength(3)]
     public string? HUUID { get; set; }
 
 

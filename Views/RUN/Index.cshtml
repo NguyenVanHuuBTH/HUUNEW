@@ -1,0 +1,53 @@
+@model IEnumerable<CUONGDB.Models.RUN>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>HIỂN THỊ</h1>
+
+<p>
+    <a asp-action="Create">Thêm Mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.RUNID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RUNNAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RUNADDRESS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RUNSEX)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.RUNID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RUNNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RUNADDRESS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RUNSEX)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RUNID">Chỉnh Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.RUNID">Chi Tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.RUNID">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

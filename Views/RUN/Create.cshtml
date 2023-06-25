@@ -1,0 +1,48 @@
+@model CUONGDB.Models.RUN
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>THÊM</h1>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RUNID" class="control-label"></label>
+                <input asp-for="RUNID" class="form-control" />
+                <span asp-validation-for="RUNID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RUNNAME" class="control-label"></label>
+                <input asp-for="RUNNAME" class="form-control" />
+                <span asp-validation-for="RUNNAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RUNADDRESS" class="control-label"></label>
+                <input asp-for="RUNADDRESS" class="form-control" />
+                <span asp-validation-for="RUNADDRESS" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="RUNSEX" class="control-label"></label>
+                <input asp-for="RUNSEX" class="form-control" />
+                <span asp-validation-for="RUNSEX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Thêm" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Quay Lại</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
