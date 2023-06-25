@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CUONGDB.Models;
 
@@ -24,6 +25,10 @@ public class RUN
     [Display(Name = "GIỚI TÍNH")]
     [MaxLength(10)]
     public string? RUNSEX { get; set; }
+    public string? FCTID { get; set; }
+    [ForeignKey("FCTID")]
+    public Faculty? Faculty {get; set;}
+
 
 
 

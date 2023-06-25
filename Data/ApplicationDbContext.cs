@@ -17,4 +17,6 @@ using CUONGDB.Models;
         public DbSet<CUONGDB.Models.HUU> HUU { get; set; } = default!;
 
         public DbSet<CUONGDB.Models.RUN> RUN { get; set; } = default!;
+
+        public DbSet<CUONGDB.Models.Faculty> Faculty { get; set; } = default!;
     }

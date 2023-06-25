@@ -9,89 +9,87 @@ using CUONGDB.Models;
 
 namespace CUONGDB.Controllers
 {
-    public class RUNController : Controller
+    public class FacultyController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public RUNController(ApplicationDbContext context)
+        public FacultyController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: RUN
+        // GET: Faculty
         public async Task<IActionResult> Index()
         {
-              return _context.RUN != null ? 
-                          View(await _context.RUN.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.RUN'  is null.");
+              return _context.Faculty != null ? 
+                          View(await _context.Faculty.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Faculty'  is null.");
         }
 
-        // GET: RUN/Details/5
+        // GET: Faculty/Details/5
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.RUN == null)
+            if (id == null || _context.Faculty == null)
             {
                 return NotFound();
             }
 
-            var rUN = await _context.RUN
-                .FirstOrDefaultAsync(m => m.RUNID == id);
-            if (rUN == null)
+            var faculty = await _context.Faculty
+                .FirstOrDefaultAsync(m => m.FCTID == id);
+            if (faculty == null)
             {
                 return NotFound();
             }
 
-            return View(rUN);
+            return View(faculty);
         }
 
-        // GET: RUN/Create
+        // GET: Faculty/Create
         public IActionResult Create()
         {
-            ViewData["FCTID"] = new SelectList(_context.Faculty, "FCTID","FCTID");
             return View();
         }
 
-        // POST: RUN/Create
+        // POST: Faculty/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RUNID,RUNNAME,RUNADDRESS,RUNSEX,FCTID")] RUN rUN)
+        public async Task<IActionResult> Create([Bind("FCTID,FCTName")] Faculty faculty)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(rUN);
+                _context.Add(faculty);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            } 
-            ViewData["FCTID"] = new SelectList(_context.Faculty, "FCTID","FCTID", rUN.FCTID);
-            return View(rUN);
+            }
+            return View(faculty);
         }
 
-        // GET: RUN/Edit/5
+        // GET: Faculty/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.RUN == null)
+            if (id == null || _context.Faculty == null)
             {
                 return NotFound();
             }
 
-            var rUN = await _context.RUN.FindAsync(id);
-            if (rUN == null)
+            var faculty = await _context.Faculty.FindAsync(id);
+            if (faculty == null)
             {
                 return NotFound();
             }
-            return View(rUN);
+            return View(faculty);
         }
 
-        // POST: RUN/Edit/5
+        // POST: Faculty/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("RUNID,RUNNAME,RUNADDRESS,RUNSEX")] RUN rUN)
+        public async Task<IActionResult> Edit(string id, [Bind("FCTID,FCTName")] Faculty faculty)
         {
-            if (id != rUN.RUNID)
+            if (id != faculty.FCTID)
             {
                 return NotFound();
             }
@@ -100,12 +98,12 @@ namespace CUONGDB.Controllers
             {
                 try
                 {
-                    _context.Update(rUN);
+                    _context.Update(faculty);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RUNExists(rUN.RUNID))
+                    if (!FacultyExists(faculty.FCTID))
                     {
                         return NotFound();
                     }
@@ -116,49 +114,49 @@ namespace CUONGDB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(rUN);
+            return View(faculty);
         }
 
-        // GET: RUN/Delete/5
+        // GET: Faculty/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.RUN == null)
+            if (id == null || _context.Faculty == null)
             {
                 return NotFound();
             }
 
-            var rUN = await _context.RUN
-                .FirstOrDefaultAsync(m => m.RUNID == id);
-            if (rUN == null)
+            var faculty = await _context.Faculty
+                .FirstOrDefaultAsync(m => m.FCTID == id);
+            if (faculty == null)
             {
                 return NotFound();
             }
 
-            return View(rUN);
+            return View(faculty);
         }
 
-        // POST: RUN/Delete/5
+        // POST: Faculty/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.RUN == null)
+            if (_context.Faculty == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.RUN'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Faculty'  is null.");
             }
-            var rUN = await _context.RUN.FindAsync(id);
-            if (rUN != null)
+            var faculty = await _context.Faculty.FindAsync(id);
+            if (faculty != null)
             {
-                _context.RUN.Remove(rUN);
+                _context.Faculty.Remove(faculty);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RUNExists(string id)
+        private bool FacultyExists(string id)
         {
-          return (_context.RUN?.Any(e => e.RUNID == id)).GetValueOrDefault();
+          return (_context.Faculty?.Any(e => e.FCTID == id)).GetValueOrDefault();
         }
     }
 }

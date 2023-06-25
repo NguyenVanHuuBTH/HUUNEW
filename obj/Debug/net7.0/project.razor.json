@@ -18680,6 +18680,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\Faculty\\Details.cshtml",
+      "TargetPath": "Views\\Faculty\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\LOPHOC\\Delete.cshtml",
       "TargetPath": "Views\\LOPHOC\\Delete.cshtml",
       "FileKind": "mvc"
@@ -18710,6 +18715,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\Faculty\\Index.cshtml",
+      "TargetPath": "Views\\Faculty\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\Faculty\\Create.cshtml",
+      "TargetPath": "Views\\Faculty\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -18735,6 +18750,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\Faculty\\Delete.cshtml",
+      "TargetPath": "Views\\Faculty\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\HUU\\Edit.cshtml",
       "TargetPath": "Views\\HUU\\Edit.cshtml",
       "FileKind": "mvc"
@@ -18752,6 +18772,11 @@
     {
       "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\HUU\\Create.cshtml",
       "TargetPath": "Views\\HUU\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\CUONGĐB\\CUONGDB\\Views\\Faculty\\Edit.cshtml",
+      "TargetPath": "Views\\Faculty\\Edit.cshtml",
       "FileKind": "mvc"
     }
   ],
